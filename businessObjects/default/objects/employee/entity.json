@@ -1,0 +1,87 @@
+{
+    "displayLabel": "employee",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "3113beb1-914e-48a7-abed-19f22b5f8786",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "6765a588-96d1-4a7c-8de9-ef18f0c25b24",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "0139d6be-5e75-45d8-9b45-576d81f848ef",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "b98917ef-e7a6-4ab6-bb24-1b477c540bb9",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "80e36ae9-b5d6-4075-b2c9-6c3e7ad650c9",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "b3ff5f30-f55f-4429-9993-1b3b4db49773",
+            "type": "number"
+        },
+        {
+            "displayLabel": "Employee ID",
+            "name": "employeeID",
+            "oid": "c44e284c-e7f8-4188-88b1-29c4b7056ce5",
+            "required": true,
+            "type": "number"
+        },
+        {
+            "displayLabel": "First Name",
+            "name": "firstName",
+            "oid": "f69394aa-2536-41cf-ad4f-7676d1cfaa2b",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Name",
+            "name": "lastName",
+            "oid": "e920e920-57e3-46a8-aa28-a53b78da6714",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Department",
+            "name": "department",
+            "oid": "6fb62d98-97d6-4bd6-807a-98f9935fd369",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "Location",
+            "name": "location",
+            "oid": "2f178c13-dd16-472a-b4b8-53e7e3f23ba9",
+            "required": true,
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "employee",
+    "oid": "1db7994a-6cb2-42d7-9044-7c1e73e83fa8"
+}

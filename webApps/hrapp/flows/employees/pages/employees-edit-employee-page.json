@@ -1,0 +1,81 @@
+{
+  "title": "Edit employee",
+  "description": "Updates single employee record",
+  "variables": {
+    "employee": {
+      "type": "getEmployeeResponse"
+    },
+    "employeeETag": {
+      "type": "string"
+    },
+    "employeeId": {
+      "type": "string",
+      "required": true,
+      "input": "fromUrl"
+    },
+    "fetchedEmployee": {
+      "type": "getEmployeeResponse"
+    },
+    "saveEmployeeChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getEmployeeResponse": {
+      "endpoint": "get_employee",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getEmployeeResponse": {
+      "department": "string",
+      "employeeID": "number",
+      "firstName": "string",
+      "lastName": "string",
+      "location": "string"
+    }
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chain": "goBackChain"
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chain": "saveEmployeeChain"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "loadEmployeeChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+   }
+  }
+}

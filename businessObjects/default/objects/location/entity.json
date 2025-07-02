@@ -1,0 +1,73 @@
+{
+    "displayLabel": "location",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "b1f28e9c-efb3-4eb1-8591-a1b519657a2b",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "historyType": "timeCreated",
+            "name": "creationDate",
+            "oid": "46ff0ef6-324b-4b0c-a94b-b09db273c631",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated",
+            "name": "lastUpdateDate",
+            "oid": "5196b8b0-9a96-423e-ae8c-37b5e7481111",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "historyType": "createdBy",
+            "name": "createdBy",
+            "oid": "5188d09f-bb37-42ec-8cc1-69fa5a70b6a7",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy",
+            "name": "lastUpdatedBy",
+            "oid": "3b30f44d-d20a-4a60-8585-a4ecfef4bb77",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber",
+            "name": "versionNumber",
+            "oid": "36147288-5f81-4e9d-a675-7731b1eba103",
+            "type": "number"
+        },
+        {
+            "displayLabel": "Location ID",
+            "name": "locationID",
+            "oid": "b455ab81-012e-4016-acb8-b05d44284091",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "City",
+            "name": "city",
+            "oid": "6ea3de86-4116-4c74-9381-1b5d185d67a1",
+            "required": true,
+            "type": "string"
+        },
+        {
+            "displayLabel": "State",
+            "name": "state",
+            "oid": "cb25d9bb-43c6-48ce-ad00-a57792dc386d",
+            "required": true,
+            "type": "string"
+        }
+    ],
+    "hidden": false,
+    "name": "location",
+    "oid": "b3e137ab-a224-48a9-97b4-707cfe7269c8"
+}

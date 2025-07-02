@@ -1,0 +1,35 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Employees"></oj-vb-fragment-param>
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+<div class="oj-flex">
+  <oj-input-search class="oj-flex-item oj-sm-12 oj-md-6" value="{{ $variables.SearchVar }}"
+    suggestions="[[$variables.employeeListSDP]]" suggestion-item-text="firstName"></oj-input-search>
+</div>
+<div class="oj-flex">
+  <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12">
+    <div class="oj-flex">
+      <oj-toolbar id="oj-toolbar-for-oj-table--799891081-1" chroming="solid" class="oj-flex-item oj-sm-12 oj-md-12">
+        <oj-button label="Edit employee" disabled="[[ $variables.oj_table_799891081_1SelectedId === '' ]]"
+          on-oj-action="[[$listeners.editEmployeeButtonClicked]]"></oj-button>
+      </oj-toolbar>
+    </div>
+    <div class="oj-flex">
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[$variables.employeeListSDP2]]"
+        columns='[{"headerText":"First Name","field":"firstName"},{"headerText":"Last Name","field":"lastName"},{"headerText":"Id","field":"id"},{"headerText":"Department","field":"department"}]'
+        id="oj-table--799891081-1" selection-mode.row="single" selection-mode.column="single"
+        on-first-selected-row-changed="[[ $listeners.oj_table_799891081_1SelectionChanged ]]"></oj-table>
+    </div>
+  </div>
+</div>
+<div class="oj-flex">
+  <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12">
+    <div class="oj-flex">
+      <oj-chart type="bar" class="oj-sm-flex-initial oj-flex-item oj-sm-12 oj-md-6"></oj-chart>
+    </div>
+  </div>
+</div>
+
+

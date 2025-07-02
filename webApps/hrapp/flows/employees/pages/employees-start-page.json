@@ -1,0 +1,145 @@
+{
+  "title": "Employees",
+  "description": "",
+  "variables": {
+    "employeeListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_employee",
+        "keyAttributes": "@value",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "firstName"
+          ]
+        },
+        "filterCriterion": {
+          "op": "$or",
+          "criteria": [
+            {
+              "op": "$co",
+              "attribute": "employeeID",
+              "value": "{{ $variables.SearchVar }}"
+            },
+            {
+              "op": "$co",
+              "attribute": "firstName",
+              "value": "{{ $variables.SearchVar }}"
+            },
+            {
+              "op": "$co",
+              "attribute": "lastName",
+              "value": "{{ $variables.SearchVar }}"
+            }
+          ]
+        }
+      }
+    },
+    "employeeListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_employee",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeResponse2",
+        "filterCriterion": {
+          "op": "$or",
+          "criteria": [
+            {
+              "op": "$co",
+              "attribute": "firstName",
+              "value": "{{ $variables.SearchVar }}"
+            },
+            {
+              "op": "$co",
+              "attribute": "lastName",
+              "value": "{{ $variables.SearchVar }}"
+            }
+          ]
+        }
+      }
+    },
+    "oj_table_799891081_1SelectedId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "SearchVar": {
+      "type": "string"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallEmployeeResponse": {
+      "endpoint": "getall_employee",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeResponse2": {
+      "endpoint": "getall_employee",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getallEmployeeResponse": {
+      "items": [
+        {
+          "department": "string",
+          "firstName": "string",
+          "id": "number",
+          "lastName": "string"
+        }
+      ]
+    },
+    "getallEmployeeResponse2": {
+      "items": [
+        {
+          "department": "string",
+          "firstName": "string",
+          "id": "number",
+          "lastName": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "editEmployeeButtonClicked": {
+      "chains": [
+        {
+          "chain": "navigateToEditEmployeeChain",
+          "parameters": {
+            "employeeId": "[[ $variables.oj_table_799891081_1SelectedId ]]"
+          }
+        }
+      ]
+    },
+    "oj_table_799891081_1SelectionChanged": {
+      "chains": [
+        {
+          "chain": "ojTable7998910811ChangeSelectionChain",
+          "parameters": {
+            "employeeId": "[[ $event.detail.value.key || '' ]]"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-chart": {
+        "path": "ojs/ojchart"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+   }
+  }
+}
